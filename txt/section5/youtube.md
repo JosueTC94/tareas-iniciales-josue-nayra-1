@@ -36,8 +36,5 @@ $ gitbook install
  
 >- #### primary::Ejemplo
 
-> {% youtube %} http://www.youtube.com/watch?v=kdpfRLpu0FQ {% endyoutube %}
-
-
 
 

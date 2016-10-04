@@ -1,6 +1,6 @@
 {
     "root" : "txt",
-    "gitbook": "3.1.1",
+    "gitbook": "1.x",
     "title": "Gitbook para apuntes. Asignatura SYTW16-17",
     "plugins": [
         "exercises", 

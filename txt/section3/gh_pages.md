@@ -35,8 +35,3 @@ Se permite alojar páginas web estáticas.
 
 > Abre tu navegador y visita el enlace: "username.gihub.io"
 
-<hr />
-
->- #### primary::Video y tutorial explicativo sobre el uso de las gh-pages. 
-
-> {% youtube %}https://www.youtube.com/watch?v=iyFjdmzcpws{% endyoutube %}

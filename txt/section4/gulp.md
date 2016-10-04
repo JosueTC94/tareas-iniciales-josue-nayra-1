@@ -85,6 +85,3 @@ $ gulp "nombre_tarea"
 <hr />
 
 >- #### primary::Videotutorial explicativo sobre el uso de Gulp.js
-
-
-> {% youtube %}https://www.youtube.com/watch?v=wNlEK8qrb0M&index=1&list=PLLnpHn493BHE2RsdyUNpbiVn-cfuV7Fos{% endyoutube %}
