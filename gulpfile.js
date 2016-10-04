@@ -34,7 +34,11 @@ gulp.task('git-commit', function(){
 
 gulp.task('push', ['git-add','git-commit'], function(){
     git.push('origin', 'master', function(err){
-       if(err) throw err; 
+       if(err) 
+       {
+           console.log("err:"+err);
+           throw err; 
+       }
     });
 });
 
