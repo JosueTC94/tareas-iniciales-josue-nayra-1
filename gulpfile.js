@@ -44,7 +44,7 @@ gulp.task('push', ['git-add','git-commit'], function(){
 
 
 //  "deploy-gitbook": "./scripts/losh deploy-gitbook",
-gulp.task('deploy', ['build','push'], deploygh);
+gulp.task('deploy', ['build','push']);
 
 gulp.task('build',function()
 {
