@@ -21,19 +21,7 @@ var deploygh = function() {
    ]))
 }
 
-// gulp.task('push', function()
-// {
-//   return gulp.src('./scripts/')
-//         // .pipe(shell(['./scripts/generate-gitbook']))
-//         .pipe(shell([
-//           "git add ."+
-//           ";"+
-//           "git commit -m 'Actualizando gitbook'"+
-//           ";"+
-//           "git push origin master"
-//         ]))
-// });
-
+//Actualizar repositorio
 gulp.task('git-add', function(){
     return gulp.src('')
                .pipe(git.add());
