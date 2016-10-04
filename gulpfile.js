@@ -40,7 +40,7 @@ gulp.task('push', ['git-add','git-commit'], function(){
 
 
 //  "deploy-gitbook": "./scripts/losh deploy-gitbook",
-gulp.task('deploy', ['instalar_dependencias','instalar_plugins','build','push'], deploygh);
+gulp.task('deploy', ['build','push'], deploygh);
 
 gulp.task('build',function()
 {
