@@ -2,6 +2,8 @@ var gulp  = require('gulp');
 var shell = require('gulp-shell');
 var Q = require('q');
 var gitbook = require('gitbook');
+var install = require('gulp-install');
+var git = require('gulp-git');
 
 var deploygh = function() {
   "use strict";
@@ -19,23 +21,38 @@ var deploygh = function() {
    ]))
 }
 
-gulp.task('push', function()
-{
-  return gulp.src('./scripts/')
-        // .pipe(shell(['./scripts/generate-gitbook']))
-        .pipe(shell([
-          "git add ."+
-          ";"+
-          "git commit -m 'Actualizando gitbook'"+
-          ";"+
-          "git push origin master"
-        ]))
+// gulp.task('push', function()
+// {
+//   return gulp.src('./scripts/')
+//         // .pipe(shell(['./scripts/generate-gitbook']))
+//         .pipe(shell([
+//           "git add ."+
+//           ";"+
+//           "git commit -m 'Actualizando gitbook'"+
+//           ";"+
+//           "git push origin master"
+//         ]))
+// });
+
+gulp.task('git-add', function(){
+    return gulp.src('')
+               .pipe(git.add());
+});
+
+gulp.task('git-commit', function(){
+    return gulp.src('')
+               .pipe(git.commit('Actualizando Gitbook'));
+});
+
+gulp.task('push', ['git-add','git-commit'], function(){
+    git.push('origin', 'master', function(err){
+       if(err) throw err; 
+    });
 });
 
 
-
 //  "deploy-gitbook": "./scripts/losh deploy-gitbook",
-gulp.task('deploy', ['plugins','build','push'], deploygh);
+gulp.task('deploy', ['instalar_dependencias','instalar_plugins','build','push'], deploygh);
 
 gulp.task('build',function()
 {
@@ -51,15 +68,19 @@ gulp.task('build',function()
     });
 })
 
-gulp.task('plugins', function()
+gulp.task('instalar_recursos',['instalar_dependencias','instalar_plugins']);
+
+gulp.task('instalar_dependencias', function()
 {
-    return gulp.src('').pipe(shell(['gitbook install']))
+    gulp.src(['./package.json']).pipe(install())
 });
 
-
-    
-    
-    
+gulp.task('instalar_plugins', function()
+{
+    return gulp.src('').pipe(shell([
+        'gitbook install'    
+    ])) 
+});
 
 gulp.task('default', function(){
     gulp.watch(['scripts/*', 'txt/**/*.md', 'book.json'], ['construir_gitbook']); 

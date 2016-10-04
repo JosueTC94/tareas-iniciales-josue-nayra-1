@@ -36,6 +36,8 @@
     "gitbook": "^2.1.0",
     "gitbook-cli": "^0.3.4",
     "gulp": "^3.9.1",
+    "gulp-git": "^1.11.3",
+    "gulp-install": "^0.6.0",
     "gulp-shell": "^0.5.2",
     "gulp-watch": "^4.3.10"
   },
@@ -43,6 +45,7 @@
     "gitbook-plugin-bootstrap-callout": "^0.1.1",
     "gitbook-plugin-exercises": "^2.1.1",
     "gitbook-plugin-youtube": "^1.1.0",
+    "gulp-install": "^0.6.0",
     "q": "^1.4.1"
   }
 }
